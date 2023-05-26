@@ -14,7 +14,7 @@ const Basic = () => {
       })
       .catch((err) => console.log(err));
   };
-
+  console.log(contents);
   useEffect(() => {
     loadData();
   }, []);
@@ -40,7 +40,6 @@ const Basic = () => {
     try {
       await axios.delete(`http://localhost:8000/api/v1/contents/${id}`);
       loadData();
-      setContents("");
     } catch (error) {
       console.log(error);
     }
